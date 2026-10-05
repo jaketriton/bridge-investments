@@ -1,0 +1,265 @@
+/* Bridge Investments Group — cash home buyer site
+   Palette: clay, sage, and paper. System fonts only. */
+
+:root {
+  --clay: #8c3d2f;
+  --clay-deep: #5c261c;
+  --sage: #3e5c4d;
+  --sage-deep: #24382e;
+  --sand: #f3efe6;
+  --sand-deep: #e6dfd1;
+  --paper: #fffcf7;
+  --ink: #2a2622;
+  --muted: #5e574e;
+  --line: #d4cbbd;
+  --focus: #1f4d3a;
+  --max: 1080px;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--sand);
+}
+
+a { color: var(--sage); }
+a:hover { color: var(--clay-deep); }
+
+h1, h2, h3 {
+  font-family: "Segoe UI", Candara, Calibri, sans-serif;
+  line-height: 1.2;
+  color: var(--sage-deep);
+  margin: 0 0 0.7rem;
+}
+
+h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1rem; }
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--sage-deep);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 10;
+}
+.skip-link:focus { left: 0; }
+
+.site-header {
+  background: var(--sage-deep);
+  color: #f6f3ec;
+}
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { color: #fff; text-decoration: none; }
+.brand-name {
+  display: block;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+.brand-tag {
+  display: block;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.85rem;
+  color: #d7e4dc;
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  align-items: center;
+}
+.nav a {
+  color: #f6f3ec;
+  font-family: "Segoe UI", Candara, sans-serif;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.nav a:hover,
+.nav a[aria-current="page"] { text-decoration: underline; }
+.nav-cta {
+  background: var(--clay);
+  color: #fff !important;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+}
+.nav-cta:hover { background: var(--clay-deep); }
+
+.hero {
+  background:
+    linear-gradient(160deg, rgba(36, 56, 46, 0.92), rgba(92, 38, 28, 0.78));
+  color: #f8f5ef;
+}
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2.75rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+.hero h1,
+.hero .lede { color: #f8f5ef; }
+.lede { font-size: 1.12rem; }
+.hero-points {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.hero-points li { margin: 0.35rem 0; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.section { padding: 2.5rem 0; }
+.section-paper { background: var(--paper); }
+
+.grid-3, .grid-2, .contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.contact-grid { grid-template-columns: 0.85fr 1.15fr; align-items: start; }
+
+.card, .form-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.1rem 1.15rem 0.4rem;
+}
+.form-card { color: var(--ink); padding-bottom: 1rem; }
+.form-card h2 { margin-top: 0.2rem; }
+.step {
+  display: inline-block;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.35rem;
+}
+.form-intro, .form-note, .fine {
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.field { margin-bottom: 0.8rem; }
+label {
+  display: block;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.92rem;
+  margin-bottom: 0.25rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+}
+textarea { resize: vertical; }
+.req { color: var(--clay); }
+.consent {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0.6rem 0 1rem;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.consent input {
+  margin-top: 0.25rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+.consent label { margin: 0; font-size: 0.88rem; }
+.btn {
+  font-family: "Segoe UI", Candara, sans-serif;
+  background: var(--clay);
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn:hover { background: var(--clay-deep); }
+address { font-style: normal; }
+
+.legal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+.legal h2 { margin-top: 1.6rem; }
+.updated {
+  font-family: "Segoe UI", Candara, sans-serif;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.legal ul { margin-top: 0; }
+
+.site-footer {
+  background: var(--sage-deep);
+  color: #e7eee9;
+  font-family: "Segoe UI", Candara, sans-serif;
+  font-size: 0.95rem;
+}
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+}
+.footer-legal-name {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+.site-footer a { color: #f3e6d8; }
+.footer-links { margin-top: 0.8rem; }
+.copyright { color: #c5d4cb; font-size: 0.85rem; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .hero-inner,
+  .grid-3,
+  .grid-2,
+  .contact-grid { grid-template-columns: 1fr; }
+}
